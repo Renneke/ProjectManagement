@@ -1,6 +1,8 @@
 # Project Management
 A collection of simple scripts for managing all of your projects.
+
 Just place the project.sh and .bashrc_template in any folder where you want to store your project files.
+Enter in the project.sh your name and email address for git support.
 
 Add an alias like
 ```
