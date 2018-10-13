@@ -1,0 +1,17 @@
+# This bash has to be opened in the project directory
+
+# Load default bash configuration
+. $(echo $HOME)/.bashrc
+
+# Project Configuration
+export PROJECT_NAME="%PROJECTNAME%"
+export HOME=$(pwd)
+
+# Change Color Scheme
+export PS1="\e[1;36m\u@$PROJECT_NAME:\W\$ \e[m "
+
+# Extend the search path
+export PATH=$(pwd)/bin:$PATH
+
+# Project specific aliases
+alias cdhome='cd ~'
