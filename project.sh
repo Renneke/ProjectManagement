@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-
-script_path=$(dirname $(readlink -e -- "$0"))
+file_path=$(readlink -e -- "$0")
+script_path=$(dirname "$file_path")
 cd $script_path
 
 
@@ -29,7 +29,7 @@ echo "#########################################################"
 echo ""
 read -p "Your selection: " num
 
-
+# Exit the Program
 if [ $num -eq 0 ]; then
     exit
 fi
@@ -42,6 +42,16 @@ if [ $num -eq -1 ]; then
         mkdir $foldername
         cp .bashrc_template "./$foldername/.bashrc"
         sed -i "s/%PROJECTNAME%/$name/g" "./$foldername/.bashrc"
+        cd $foldername
+        git init
+        echo ".bashrc" > ".gitignore"
+        echo ".git*" >> ".gitignore"
+
+        echo "[user]" > ".gitconfig"
+        echo "	email = florianrenneke@gmail.com" >> ".gitconfig"
+        echo "	name = Florian Renneke" >> ".gitconfig"
+
+        mkdir bin
     fi
     exit
 fi
