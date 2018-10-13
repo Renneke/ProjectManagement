@@ -22,3 +22,9 @@ Available Projects in /home/user/Projekte:
 Your selection: ___
 
 ```
+
+This script is opening a new bash session with modified home directory, additional commands and the path variable is aiming at the project's bin folder.
+You can exit a project by just typing
+```
+exit
+```
