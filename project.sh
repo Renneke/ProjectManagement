@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+NAME="YOUR NAME"
+EMAIL="YOUR@EMAIL.com"
+
 file_path=$(readlink -e -- "$0")
 script_path=$(dirname "$file_path")
 cd $script_path
@@ -48,8 +51,8 @@ if [ $num -eq -1 ]; then
         echo ".git*" >> ".gitignore"
 
         echo "[user]" > ".gitconfig"
-        echo "	email = florianrenneke@gmail.com" >> ".gitconfig"
-        echo "	name = Florian Renneke" >> ".gitconfig"
+        echo "	email = $EMAIL" >> ".gitconfig"
+        echo "	name = $NAME" >> ".gitconfig"
 
         mkdir bin
     fi
